@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geleceğin Makine Teknolojileri</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo float-el" style="font-weight: 800; font-size: 1.5rem;">LOGO</div>
+        <ul class="nav-links">
+            <li><a href="/">Anasayfa</a></li>
+            <li><a href="/kurumsal">Kurumsal</a></li>
+            <li><a href="/urunler">Ürünler</a></li>
+            <li><a href="/makine-parkuru">Makine Parkuru</a></li>
+            <li><a href="/iletisim">İletişim</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-btn">🌓</button>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; background: var(--card-bg); margin-top: auto;">
+        <p>© 2026 Modern Makine | Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
