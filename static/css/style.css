@@ -59,3 +59,29 @@ section { padding: 8rem 5% 4rem; min-height: 100vh; display: flex; flex-directio
 .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
 .card { background: var(--card-bg); padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition); }
 .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-bottom: 3px solid var(--primary-color); }
+
+/* WhatsApp Float Buton Tasarýmý */
+.whatsapp-float {
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25D366; /* Orijinal WhatsApp Yeþili */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px) scale(1.1);
+    background-color: #128C7E;
+    box-shadow: 0 15px 25px rgba(18, 140, 126, 0.4);
+    color: white;
+}
