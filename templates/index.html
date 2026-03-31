@@ -2,22 +2,27 @@
 {% block content %}
 <section class="hero text-center">
     <div class="hero-content fade-up">
-        <h1 style="opacity: 0; font-size: 1.5rem;">Berat Makine</h1> <div class="energy-ring"></div>
-        <div class="giant-brand-block">
-            BERAT MAKİNE
+        
+        <canvas id="spark-canvas"></canvas>
+
+        <div class="brand-cut-container">
+            <div class="brand-base">BERAT MAKİNA</div>
+            <div class="brand-glow">BERAT MAKİNA</div>
         </div>
 
-        <p style="font-size: 1.3rem; margin: -1rem 0 2rem; color: #64748b; font-weight: 600;" class="float-el">FUTURE OF PRECISION MANUFACTURING</p>
+        <p style="font-size: 1.3rem; margin: -1rem 0 2rem; color: var(--secondary-color); font-weight: 600; text-transform: uppercase; letter-spacing: 2px;" class="float-el">
+            HASSASİYETİN VE GÜCÜN SANATI: ENDÜSTRİYEL CNC ÇÖZÜMLERİ
+        </p>
         <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem; opacity: 0.8;" class="float-el">
-            Micron-level accuracy. Ultra-durable alloys. Engineering the impossible. Experience gravity-defying accuracy with our advanced CNC solutions.
+            Mikron seviyesinde hassasiyet. Ultra dayanıklı alaşımlar. İmkansızı mühendislikle buluşturuyoruz. Deneyim ve teknolojinin birleştiği nokta.
         </p>
         
-        <a href="/iletisim" style="padding: 1.2rem 3rem; background: var(--primary-color); color: white; text-decoration: none; border-radius: 30px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;" class="float-el">Teklif Al</a>
+        <a href="/iletisim" style="padding: 1.2rem 3rem; background: var(--primary-color); color: white; text-decoration: none; border-radius: 5px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition);" class="float-el">Teklif Al</a>
     </div>
 </section>
 
 <section class="why-us">
-    <h2 class="fade-up" style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">Öncü Hizmet Alanlarımız</h2>
+    <h2 class="fade-up" style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; text-transform: uppercase;">Öncü Hizmet Alanlarımız</h2>
     <div class="features-grid">
         <div class="card fade-up float-el" style="animation-delay: 0s;">
             <h3>🚗 Otomotiv</h3>

@@ -1,24 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Share+Tech+Mono&display=swap');
 
 /* Tema Değişkenleri */
 :root {
-    --bg-color: #f0f4f8; /* Daha yumuşak aydınlık */
-    --text-color: #1a202c;
-    --primary-color: #2563eb;
-    --secondary-color: #8b5cf6;
+    --bg-color: #f1f5f9; /* Temiz aydınlık */
+    --text-color: #0f172a;
+    --primary-color: #2563eb; /* UI Vurgu */
+    --secondary-color: #475569; /* Endüstriyel gri */
     --glass-bg: rgba(255, 255, 255, 0.7);
     --card-bg: #ffffff;
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --neon-blue: #00e5ff; /* Neon vurgular */
-    --neon-purple: #bd00ff;
+    
+    /* Kıvılcım Renkleri */
+    --spark-core: #fff;
+    --spark-outer: #f59e0b; /* Sıcak turuncu/sarı */
 }
 
-[data-theme='dark'] {
-    --bg-color: #0d1117; /* Cyber Dark */
-    --text-color: #e6edf3;
-    --primary-color: #3b82f6;
-    --glass-bg: rgba(13, 17, 23, 0.7);
-    --card-bg: #161b22;
+[data-theme="dark"] {
+    --bg-color: #05070a; /* Derin Siber Siyah */
+    --text-color: #e2e8f0;
+    --primary-color: #60a5fa;
+    --glass-bg: rgba(5, 7, 10, 0.7);
+    --card-bg: #111827;
 }
 
 /* Genel Stiller */
@@ -38,111 +40,91 @@ body {
     backdrop-filter: blur(10px);
     display: flex; justify-content: space-between; align-items: center;
     padding: 1rem 5%;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.05);
 }
-[data-theme='dark'] .navbar { border-bottom: 1px solid rgba(0, 229, 255, 0.2); }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
-.nav-links a { color: var(--text-color); text-decoration: none; font-weight: 600; transition: var(--transition); }
-.nav-links a:hover { color: var(--neon-blue); text-shadow: 0 0 5px var(--neon-blue); }
+.nav-links a { color: var(--text-color); text-decoration: none; font-weight: 600; transition: var(--transition); text-transform: uppercase; letter-spacing: 1px; }
+.nav-links a:hover { color: var(--primary-color); }
 .theme-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-color); }
-
-/* Antigravity (Yerçekimsiz) Animasyon */
-@keyframes antigravity {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0px); }
-}
-.float-el { animation: antigravity 5s ease-in-out infinite; }
 
 /* Scroll Animasyonları */
 .fade-up { opacity: 0; transform: translateY(40px); transition: 0.8s ease-out; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-/* Anasayfa Bölümleri */
-section { padding: 8rem 5% 4rem; min-height: 100vh; display: flex; flex-direction: column; justify-content: center;}
-
-/* --- YENİ BERAT MAKİNE ÖN PLAN ANIMASYONU --- */
+/* --- YENİ CNC KESİM VE KIVILCIM ANIMASYONU --- */
 
 .hero-content {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     min-height: 80vh; position: relative;
+    overflow: hidden; /* Kıvılcımlar taşmasın */
 }
 
-/* Devasa, Süzülen Marka Adı */
-.giant-brand-block {
-    font-size: 6rem; font-weight: 800; text-transform: uppercase;
+/* Katmanlı Marka Metni */
+.brand-cut-container {
     position: relative; margin: 4rem 0;
-    color: transparent; /* İçini şeffaf yapıp kenarlık ve efekt vereceğiz */
-    background: linear-gradient(135deg, #444, #888);
+    cursor: default;
+}
+
+.brand-base {
+    font-size: 6rem; font-weight: 800; text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(128, 128, 128, 0.2); /* Hafif metal kenarlık */
+}
+[data-theme="dark"] .brand-base { -webkit-text-stroke: 2px rgba(255, 255, 255, 0.1); }
+
+/* Kesme Parıltısı */
+.brand-glow {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    font-size: 6rem; font-weight: 800; text-transform: uppercase;
+    color: var(--spark-outer);
+    text-shadow: 0 0 15px var(--spark-outer), 0 0 30px #dc2626;
+    background: linear-gradient(90deg, transparent, var(--spark-core), transparent);
+    background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-stroke: 2px rgba(0, 229, 255, 0.4); /* Neon kenarlık */
     
-    animation: floating-metal 6s ease-in-out infinite, glitch 3s infinite linear alternate-reverse;
-    text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
-    transform-style: preserve-3d;
-}
-
-/* Karanlık Modda Daha Vurgulu */
-[data-theme="dark"] .giant-brand-block {
-    background: linear-gradient(135deg, #607d8b, #b0bec5);
-    -webkit-background-clip: text;
-    -webkit-text-stroke: 2px rgba(189, 0, 255, 0.4); /* Mor Neon Kenarlık */
-    text-shadow: 0 0 30px rgba(189, 0, 255, 0.6);
-}
-
-/* Metal Süzülme Animasyonu */
-@keyframes floating-metal {
-    0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
-    33% { transform: translateY(-20px) rotateX(2deg) rotateY(-2deg); }
-    66% { transform: translateY(-10px) rotateX(-2deg) rotateY(2deg); }
-}
-
-/* Lazer Kazıma Efekti (Glitch) */
-@keyframes glitch {
-  0% { text-shadow: 2px 2px 0 var(--neon-blue), -2px -2px 0 var(--neon-purple); }
-  25% { text-shadow: -2px -2px 0 var(--neon-blue), 2px 2px 0 var(--neon-purple); }
-  50% { text-shadow: 2px -2px 0 var(--neon-blue), -2px 2px 0 var(--neon-purple); }
-  100% { text-shadow: -2px 2px 0 var(--neon-blue), 2px -2px 0 var(--neon-purple); }
-}
-
-/* Marka Arkasındaki Hafif Dönen Enerji Halkası */
-.energy-ring {
-    width: 600px; height: 600px; border-radius: 50%;
-    border: 2px solid rgba(0, 229, 255, 0.1);
-    position: absolute; top: calc(50% - 300px); left: calc(50% - 300px);
-    animation: rotate-ring 20s linear infinite;
+    animation: cut-move 5s linear infinite;
     pointer-events: none;
 }
-[data-theme="dark"] .energy-ring {
-    border: 2px solid rgba(189, 0, 255, 0.1);
+
+@keyframes cut-move {
+    0% { background-position: 200% 0; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { background-position: -200% 0; opacity: 0; }
 }
 
-@keyframes rotate-ring {
-    from { transform: rotate(0); }
-    to { transform: rotate(360deg); }
+/* Kıvılcım Partikülleri Canvas */
+#spark-canvas {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 10;
 }
 
-/* Grid ve Kartlar */
+/* --- USTALIK ESERİ TASARIM (KARTLAR VE BÖLÜMLER) --- */
+
 .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
 .card {
-    background: var(--card-bg); padding: 2rem; border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: var(--transition);
-    border: 1px solid transparent;
+    background: var(--card-bg); padding: 2rem; border-radius: 10px; /* Daha keskin, modern köşeler */
+    transition: var(--transition);
+    border: 1px solid rgba(128, 128, 128, 0.1);
+    position: relative; overflow: hidden;
 }
-[data-theme='dark'] .card { border: 1px solid rgba(128, 128, 128, 0.1); }
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    border-color: var(--neon-blue);
-    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+
+/* Kart Hover Efekti (Ustalık Vurgusu) */
+.card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    transform: translateX(-100%); transition: var(--transition);
 }
+.card:hover { transform: translateY(-5px); border-color: var(--primary-color); }
+.card:hover::after { transform: translateX(100%); }
 
 /* Sayfa Başlıkları */
 .page-header h1 {
-    font-size: 3rem; font-weight: 800;
-    background: linear-gradient(45deg, var(--text-color), var(--secondary-color));
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    font-size: 3rem; font-weight: 800; text-transform: uppercase;
+    color: var(--text-color);
+    letter-spacing: 2px;
+    border-bottom: 3px solid var(--primary-color); display: inline-block; padding-bottom: 0.5rem;
 }
 
 /* WhatsApp Float Buton Tasarımı */
@@ -174,8 +156,7 @@ section { padding: 8rem 5% 4rem; min-height: 100vh; display: flex; flex-directio
 /* --- RESPONSIVE TASARIM AYARLARI --- */
 
 @media (max-width: 1024px) {
-    .giant-brand-block { font-size: 4.5rem; }
-    .energy-ring { width: 450px; height: 450px; top: calc(50% - 225px); left: calc(50% - 225px); }
+    .brand-base, .brand-glow { font-size: 4.5rem; }
 }
 
 @media (max-width: 768px) {
@@ -183,10 +164,8 @@ section { padding: 8rem 5% 4rem; min-height: 100vh; display: flex; flex-directio
     .logo { margin-bottom: 0.5rem; }
     .nav-links { gap: 1rem; font-size: 0.85rem; flex-wrap: wrap; justify-content: center; }
     
-    .giant-brand-block { font-size: 3rem; margin: 2rem 0; -webkit-text-stroke: 1.5px rgba(0, 229, 255, 0.4); }
-    [data-theme="dark"] .giant-brand-block { -webkit-text-stroke: 1.5px rgba(189, 0, 255, 0.4); }
-    
-    .energy-ring { width: 320px; height: 320px; top: calc(50% - 160px); left: calc(50% - 160px); }
+    .brand-base, .brand-glow { font-size: 3rem; -webkit-text-stroke: 1.5px rgba(128, 128, 128, 0.3); }
+    [data-theme="dark"] .brand-base { -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.15); }
     
     .hero-content p { font-size: 1rem !important; padding: 0 1rem; margin-bottom: 1.5rem !important; }
     .hero-content p:first-of-type { margin-top: 0 !important; }
@@ -202,8 +181,7 @@ section { padding: 8rem 5% 4rem; min-height: 100vh; display: flex; flex-directio
 }
 
 @media (max-width: 480px) {
-    .giant-brand-block { font-size: 2.2rem; }
+    .brand-base, .brand-glow { font-size: 2.2rem; }
     .nav-links { gap: 0.7rem; font-size: 0.75rem; }
-    .energy-ring { width: 260px; height: 260px; top: calc(50% - 130px); left: calc(50% - 130px); }
     .navbar { padding: 0.8rem; }
 }
