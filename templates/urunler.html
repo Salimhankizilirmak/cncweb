@@ -1,32 +1,309 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="page-header" style="text-align: center;">
-    <h1 class="fade-up float-el">Örnek Ürün Gruplarımız</h1>
-    <p class="fade-up" style="max-width: 800px; margin: 2rem auto; font-size: 1.1rem; line-height: 1.8;">
-        Yüksek kalite standartlarında ürettiğimiz, farklı sektörlere yönelik örnek ürün grupları.
+
+<section class="page-header" style="text-align: center; padding-top: 10rem; padding-bottom: 2rem; min-height: auto;">
+    <h1 class="fade-up" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 1rem;">Ürün Galerimiz</h1>
+    <p class="fade-up" style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: var(--secondary-color);">
+        Talaşlı imalat, torna, freze ve dişli üretimi alanında mikron hassasiyetinde ürettiğimiz, farklı sektörlere (otomotiv, değirmen, medikal, savunma) yönelik 38 farklı örnek projemiz.
     </p>
 </section>
 
-<section class="products-grid-section" style="padding-bottom: 5rem;">
-    <div class="features-grid">
-        <div class="card fade-up float-el" style="animation-delay: 0s;">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">⚙️</div>
-            <h3 style="color: var(--primary-color);">Özel Dişli Takımları</h3>
-            <p style="margin: 1rem 0; opacity: 0.8;">Yüksek tork ve dayanıklılık gerektiren endüstriyel dişli sistemleri.</p>
-            <a href="/iletisim" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Teklif Al →</a>
+<!-- FİLTRELEME BUTONLARI (Görsel Zenginlik İçin Eklenmiş Sahte Filtre Barı) -->
+<div class="fade-up" style="text-align: center; margin-bottom: 3rem;">
+    <button class="cta-button" style="padding: 0.5rem 1.5rem; margin: 0.5rem; font-size: 0.85rem; border-radius: 20px;">Tümü</button>
+    <button class="cta-button" style="padding: 0.5rem 1.5rem; margin: 0.5rem; font-size: 0.85rem; border-radius: 20px; background: transparent; color: var(--text-color);">Dişliler</button>
+    <button class="cta-button" style="padding: 0.5rem 1.5rem; margin: 0.5rem; font-size: 0.85rem; border-radius: 20px; background: transparent; color: var(--text-color);">Mil & Şaft</button>
+    <button class="cta-button" style="padding: 0.5rem 1.5rem; margin: 0.5rem; font-size: 0.85rem; border-radius: 20px; background: transparent; color: var(--text-color);">Hassas CNC</button>
+</div>
+
+<section class="products-grid-section" style="padding-bottom: 8rem;">
+    <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; padding: 0 5%; max-width: 1400px; margin: 0 auto;">
+
+        <!-- BATCH 1 -->
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/1.jpeg') }}" alt="Delikli Özel Şaft">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Oluklu Özel Mil (Çelik Kovan)</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">CNC Torna / Mil Grubu</p>
         </div>
-        <div class="card fade-up float-el" style="animation-delay: 0.2s;">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🔧</div>
-            <h3 style="color: var(--primary-color);">Hassas Miller</h3>
-            <p style="margin: 1rem 0; opacity: 0.8;">Otomotiv ve havacılık için mikron hassasiyetinde işlenmiş miller.</p>
-            <a href="/iletisim" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Teklif Al →</a>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden; animation-delay: 0.05s;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/2.jpeg') }}" alt="Flanşlı Göbek">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Ağır Sanayi Flanşlı Göbek</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Rulman Yatağı Grubu</p>
         </div>
-        <div class="card fade-up float-el" style="animation-delay: 0.4s;">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">🧪</div>
-            <h3 style="color: var(--primary-color);">Tıbbi Bileşenler</h3>
-            <p style="margin: 1rem 0; opacity: 0.8;">Cerrahi aletler ve protezler için biyo-uyumlu metal parçalar.</p>
-            <a href="/iletisim" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Teklif Al →</a>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden; animation-delay: 0.1s;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/3.jpeg') }}" alt="Gerdirme Çubukları">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Mafsallı Uçlu Gijonlar</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Endüstriyel Aktarma</p>
         </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden; animation-delay: 0.15s;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/4.jpeg') }}" alt="Özel Üretim Çark">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Çelik Aktarma Çarkı</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Dişli Grubu</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden; animation-delay: 0.2s;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/5.jpeg') }}" alt="Krom Kaplı Mil">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Savunma Sanayi Özel Mili</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Hassas CNC</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden; animation-delay: 0.25s;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/6.jpeg') }}" alt="Çelik Manşonlar">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Çelik Bağlantı Manşonları</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Bağlantı Elemanları</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden; animation-delay: 0.3s;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/7.jpeg') }}" alt="Alüminyum Freze Parçaları">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Hassas Alüminyum Gövdeler</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Özel Kalıp ve Freze</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden; animation-delay: 0.35s;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/8.jpeg') }}" alt="CNC Torna">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Sensörlü CNC Torna Süreci</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Üretimden Kareler</p>
+        </div>
+        
+        <!-- BATCH 2 -->
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/9.jpeg') }}" alt="Talaşlı İmalat">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Yüksek Devir Şaft İşleme</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Talaşlı İmalat</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/10.jpeg') }}" alt="Mafsallar">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Küre Başlı Rotil Mafsallar</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Otomotiv Parçaları</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/11.jpeg') }}" alt="Kademeli Çelik Miller">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Kademeli Piston Milleri</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Hidrolik Sistemler</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/12.jpeg') }}" alt="Pirinç Somunlar">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Mikron Boyut Kör Tapalar</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Pirinç/Sarı Alaşımlar</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/15.jpeg') }}" alt="Ayna Mahruti Dişli">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Helisel Ayna Mahruti Dişli</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Ağır Sanayi Dişlileri</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/16.jpeg') }}" alt="Özel Bronz Dişliler">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Bronz / Çelik Dişli Setleri</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Dişli Grubu</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/17.jpeg') }}" alt="Düz Dişli">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Düz ve Pinyon Dişliler</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Aktarma Organları</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/18.jpeg') }}" alt="Triger Kasnak">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Triger Kayışı Kasnakları</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Senkron Çalışma Parçaları</p>
+        </div>
+
+        <!-- BATCH 3 -->
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/19.jpeg') }}" alt="Kovanlı Düz Dişli">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Kovanlı Düz Çelik Dişliler</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Traktör/Tarım Ekipmanları</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/20.jpeg') }}" alt="Kestamid Dişli">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Sessiz Polimer Keçe Dişli</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Kestamid Malzeme</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/21.jpeg') }}" alt="Aktarma Kutusu Gövdesi">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Redüktör ve Şanzıman Pulu</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Özel Üretim</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/22.jpeg') }}" alt="Silindir Kapak Contası">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Çelik Kalıp Somunları</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Özel Diş Açma</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/23.jpeg') }}" alt="Yedek Aksesuarlar">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Otomotiv Ara Flanşları</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Mil Grubu</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/24.jpeg') }}" alt="T Tipi Geçme">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Süpürme Aracı Parçaları</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Özel Proje</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/25.jpeg') }}" alt="Savunma Parçaları">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Kavrama ve Geçme Parçası</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">CNC Freze</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/26.jpeg') }}" alt="Değirmen Aktarma Pimi">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Ağır Sanayi Kamalı Pimi</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Endüstriyel Bağlantılar</p>
+        </div>
+
+        <!-- BATCH 4 -->
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/27.jpeg') }}" alt="Dişli Aktarma Çarkı">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Düz Kremayer Tipi İletken</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Mekanik Sistemler</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/28.jpeg') }}" alt="Medikal Bileşen">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Yivli Aktarma Parçası</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Medikal ve AR-GE</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/29.jpeg') }}" alt="Gijon Adaptör">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Diş Cıvata ve Adaptörler</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Özel Somun Grubu</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/30.jpeg') }}" alt="Akü ve Şaft">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Sessiz Polimer Dişliler</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Otomasyon Çözümleri</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/31.jpeg') }}" alt="Sonsuz Dişli">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Sonsuz Dişli Sistemleri</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Çark Grubu</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/32.jpeg') }}" alt="Makine Bağlantısı">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Ana Yataklama Şaftı</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Özel Üretim</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/33.jpeg') }}" alt="Gemi Sanayi Çarkı">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Gemi Pervane Mili Parçası</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Marine Çözümleri</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/35.jpeg') }}" alt="Eksantrik Parça">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Kavrama ve Yay Sıkıştırıcı</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Özel İşleme</p>
+        </div>
+
+        <!-- BATCH 5 -->
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/36.jpeg') }}" alt="Rulman Manşonu">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Rulman Kaydırma Manşonu</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Sarkaç ve Yataklama</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/37.jpeg') }}" alt="Hidrolik Tapa">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Pnömatik Başlık Tapası</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Sızdırmazlık Sistemi</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/38.jpeg') }}" alt="Teker Göbek Mili">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Yol Süpürme Aracı Fırça Mili</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Yedek Parça</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/39.jpeg') }}" alt="Otomotiv Pompası">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Pompa Akış Yönlendiricisi</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Sıvı Pompaları</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/40.jpeg') }}" alt="CNC Parça">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Hassas Ölçüm Blok Plakası</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Tolerans ve Fikstür</p>
+        </div>
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 1rem;">
+                <img src="{{ url_for('static', filename='img/41.jpeg') }}" alt="Mil Kapağı">
+            </div>
+            <h3 style="font-size: 1rem; text-align: center; font-weight: 600;">Yüksek Mukavemetli Kapak</h3>
+            <p style="font-size: 0.8rem; text-align: center; color: var(--secondary-color); margin-top: 0.5rem;">Özel Tolerans</p>
+        </div>
+
     </div>
 </section>
+
+<section style="text-align: center; padding: 4rem 5%; background-color: var(--card-bg); border-top: 1px solid var(--border-color);">
+    <h2 class="fade-up" style="font-family: 'Montserrat', sans-serif; font-size: 2rem; margin-bottom: 1.5rem;">Aklınızdaki Parçayı Beraber Üretelim</h2>
+    <p class="fade-up" style="color: var(--secondary-color); margin-bottom: 2rem; max-width: 600px; margin: 0 auto 2rem;">
+        Yukarıdaki referans ürünlerimizde olduğu gibi, sizin için de hassasiyetin sanata dönüştüğü parçalar üretebiliriz. Teknik çiziminiz veya parça numunenizle hemen bize ulaşın.
+    </p>
+    <a href="/iletisim" class="cta-button fade-up">Ücretsiz Fiyatlandırma Talebi İletin</a>
+</section>
+
 {% endblock %}

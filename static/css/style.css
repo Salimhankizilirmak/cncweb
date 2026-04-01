@@ -159,20 +159,29 @@ section {
     line-height: 1;
     margin-bottom: 1rem;
     
-    /* Metalik Gradyan */
-    background: linear-gradient(180deg, var(--text-color) 0%, var(--secondary-color) 100%);
+    /* Metalik Parıltı Animasyonu */
+    background: linear-gradient(120deg, var(--text-color) 40%, #e4e4e7 50%, var(--text-color) 60%);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     
     /* Hafif derinlik */
     text-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    animation: shine-sweep 6s linear infinite;
 }
 
 [data-theme='dark'] .brand-title {
-    background: linear-gradient(180deg, #ffffff 0%, #737373 100%);
+    background: linear-gradient(120deg, #ffffff 40%, #9ca3af 50%, #ffffff 60%);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
+}
+
+@keyframes shine-sweep {
+    to {
+        background-position: 200% center;
+    }
 }
 
 /* Modern Çizgi Animasyonu (Eski kıvılcım yerine şık lazer kesim çizgisi) */

@@ -24,4 +24,75 @@
         </div>
     </div>
 </section>
+
+<!-- ÜRETİMDEN KARELER (GALERİ / BLOG) BÖLÜMÜ -->
+<section class="gallery" style="background-color: var(--card-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div style="text-align: center; margin-bottom: 3rem;" class="fade-up">
+        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; text-transform: uppercase;">Üretimden Kareler</h2>
+        <p style="color: var(--secondary-color); margin-top: 0.5rem;">Tezgahlarımızdan çıkan hassas parçalar ve çalışma alanımız.</p>
+    </div>
+    
+    <div class="gallery-grid fade-up" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; padding: 0 5%; max-width: 1400px; margin: 0 auto;">
+        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
+            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/4.jpeg') }}" alt="Üretim 1" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
+        </div>
+        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
+            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/8.jpeg') }}" alt="Üretim 2" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
+        </div>
+        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
+            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/10.jpeg') }}" alt="Üretim 3" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
+        </div>
+        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
+            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/19.jpeg') }}" alt="Üretim 4" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
+        </div>
+        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
+            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/32.jpeg') }}" alt="Üretim 5" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
+        </div>
+        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
+            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/1.jpeg') }}" alt="Üretim 6" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
+        </div>
+    </div>
+</section>
+
+<!-- GÜÇLÜ REFERANSLAR (KAYAN BANT / MARQUEE) BÖLÜMÜ -->
+<section class="references" style="padding: 6rem 0; min-height: auto;">
+    <div style="text-align: center; margin-bottom: 3rem;" class="fade-up">
+        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; text-transform: uppercase;">Güçlü Referanslarımız</h2>
+        <p style="color: var(--secondary-color); margin-top: 0.5rem;">Sektörün öncüleriyle çalışmaktan gurur duyuyoruz.</p>
+    </div>
+
+    <div class="marquee-container fade-up" style="animation-delay: 0.2s;">
+        <div class="marquee-content">
+            <span class="marquee-item">Alkan Makina Değirmen</span> <span class="dot">•</span>
+            <span class="marquee-item">Miran Makina</span> <span class="dot">•</span>
+            <span class="marquee-item">Çorum Milling</span> <span class="dot">•</span>
+            <span class="marquee-item">Emta Makina</span> <span class="dot">•</span>
+            <span class="marquee-item">Clay Tech</span> <span class="dot">•</span>
+            <span class="marquee-item">Delta Dişli</span> <span class="dot">•</span>
+            <span class="marquee-item">Boyraz Grup</span> <span class="dot">•</span>
+            <span class="marquee-item">Oms Okur Makina</span> <span class="dot">•</span>
+            <span class="marquee-item">Güven Hırdavat</span> <span class="dot">•</span>
+            <span class="marquee-item">Arn Makina</span> <span class="dot">•</span>
+            <span class="marquee-item">Yuva Makina</span> <span class="dot">•</span>
+            <span class="marquee-item">Taş Değirmen</span> <span class="dot">•</span>
+            <span class="marquee-item">İno Meka</span> <span class="dot">•</span>
+            <span class="marquee-item">Erdacrane</span> <span class="dot">•</span>
+            <span class="marquee-item">Deniz Değirmen Makina</span> <span class="dot">•</span>
+            <span class="marquee-item">Murat Çelik</span> <span class="dot">•</span>
+            <span class="marquee-item">Porem Makina Porselen</span> <span class="dot">•</span>
+            <span class="marquee-item">Fido Tech</span> <span class="dot">•</span>
+            <span class="marquee-item">Hayranoğlu CNC Torna</span> <span class="dot">•</span>
+            <span class="marquee-item">Grindex Milling Machine</span> <span class="dot">•</span>
+            
+            <span class="marquee-item">Alkan Makina Değirmen</span> <span class="dot">•</span>
+            <span class="marquee-item">Miran Makina</span> <span class="dot">•</span>
+            <span class="marquee-item">Çorum Milling</span> <span class="dot">•</span>
+            <span class="marquee-item">Emta Makina</span> <span class="dot">•</span>
+            <span class="marquee-item">Clay Tech</span> <span class="dot">•</span>
+            <span class="marquee-item">Delta Dişli</span> <span class="dot">•</span>
+            <span class="marquee-item">Boyraz Grup</span> <span class="dot">•</span>
+            <span class="marquee-item">Oms Okur Makina</span> <span class="dot">•</span>
+            </div>
+    </div>
+</section>
 {% endblock %}
