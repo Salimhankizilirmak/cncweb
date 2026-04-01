@@ -240,6 +240,55 @@ section {
     color: var(--primary-color) !important;
 }
 
+/* --- GLOWING BACKGROUND ANIMATION (KURUMSAL) --- */
+.glow-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(29, 78, 216, 0.15) 0%, rgba(29, 78, 216, 0) 70%);
+    border-radius: 50%;
+    z-index: 0;
+    filter: blur(40px);
+    animation: pulse-glow 5s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+[data-theme='dark'] .glow-bg {
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, rgba(59, 130, 246, 0) 70%);
+}
+
+@keyframes pulse-glow {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+}
+
+/* --- FİLTRELEME BUTONLARI --- */
+.filter-btn {
+    background: transparent;
+    color: var(--text-color);
+    padding: 0.6rem 1.8rem;
+    margin: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 30px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.filter-btn:hover, .filter-btn.active {
+    background: var(--text-color);
+    color: var(--bg-color);
+    border-color: var(--text-color);
+}
+[data-theme='dark'] .filter-btn:hover, [data-theme='dark'] .filter-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
 /* --- USTALIK ESERİ KARTLAR (GRID) --- */
 .features-grid {
     display: grid;
@@ -331,42 +380,100 @@ section {
 }
 
 /* --- RESPONSIVE TASARIM --- */
+/* --- HAMBURGER MENÜ İKONU --- */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 3px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* --- RESPONSIVE TASARIM --- */
 @media (max-width: 1024px) {
     .brand-title { font-size: 4.5rem; }
 }
 
 @media (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
-        flex-direction: column;
-        gap: 1rem;
+    .hamburger-menu {
+        display: flex;
     }
     
     .nav-links {
-        gap: 1.5rem;
-        font-size: 0.85rem;
-        flex-wrap: wrap;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1500;
+        border-left: 1px solid var(--border-color);
+    }
+
+    /* Karanlık tema için mobilde camsı etki */
+    [data-theme='dark'] .nav-links {
+        background: rgba(10, 10, 10, 0.95);
     }
     
-    .brand-title { font-size: 3.5rem; }
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+    
+    .brand-title { font-size: 3.2rem; }
     
     .hero-subtitle {
         font-size: 1rem;
         padding: 0 1rem;
     }
     
-    section { padding: 8rem 5% 3rem; }
+    section { padding: 6rem 5% 3rem; }
     
-    .page-header h1 { font-size: 2.5rem; }
+    .page-header h1 { font-size: 2.2rem; }
     
-    .features-grid { grid-template-columns: 1fr; }
+    .features-grid { 
+        grid-template-columns: 1fr; 
+        gap: 1.5rem; 
+    }
 }
 
 @media (max-width: 480px) {
-    .brand-title { font-size: 2.5rem; }
-    .nav-links { gap: 1rem; font-size: 0.75rem; }
-    .navbar { padding: 0.8rem; }
+    .navbar { padding: 1rem; }
+    .brand-title { font-size: 2.2rem; }
+    .hero-subtitle { font-size: 0.95rem; }
+    .page-header h1 { font-size: 1.8rem; }
+    .cta-button { padding: 1rem 2rem; font-size: 0.9rem; }
 }
 
 /* --- KART GÖRSELLERİ İÇİN (Yedek Parça vb.) --- */

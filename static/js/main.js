@@ -19,4 +19,63 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
+// Mobilde menü açıkken scroll'u kilitlemek veya linke tıklayınca kapamak için
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        // Menü açıldığında alttaki sayfanın kaymasını engelle
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    });
+}
+
+// Menü linklerine tıklandığında menüyü kapat
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (hamburger.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+});
+
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// Ürün Galerisi Filtreleme Sistemi
+const filterBtns = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+if (filterBtns.length > 0 && galleryItems.length > 0) {
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Aktif buton değiştirme
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const filterValue = btn.getAttribute('data-filter');
+            
+            galleryItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                
+                // Animasyonlu filtrelenme geçişi
+                if (filterValue === 'all' || filterValue === itemCategory) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300); // transition süresi kadar bekle
+                }
+            });
+        });
+    });
+}

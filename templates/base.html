@@ -9,6 +9,7 @@
 <body>
     <nav class="navbar">
         <div class="logo float-el" style="font-weight: 800; font-size: 1.5rem; color: var(--primary-color);">BERAT MAKİNE</div>
+        
         <ul class="nav-links">
             <li><a href="/">Anasayfa</a></li>
             <li><a href="/kurumsal">Kurumsal</a></li>
@@ -16,7 +17,15 @@
             <li><a href="/yedek-parca">Yedek Parça</a></li>
             <li><a href="/iletisim">İletişim</a></li>
         </ul>
-        <button id="theme-toggle" class="theme-btn">🌓</button>
+
+        <div class="nav-actions" style="display: flex; align-items: center; gap: 1.5rem;">
+            <button id="theme-toggle" class="theme-btn" title="Karanlık/Aydınlık Tema Değiştir">🌓</button>
+            <div class="hamburger-menu" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
 
     <main>
