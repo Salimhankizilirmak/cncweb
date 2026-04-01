@@ -15,9 +15,10 @@ def corporate():
 def products():
     return render_template('urunler.html')
 
-@app.route('/makine-parkuru')
-def machine_park():
-    return render_template('makine_parkuru.html')
+# YENİ EKLENEN YÖNLENDİRME (Makine Parkuru yerine)
+@app.route('/yedek-parca')
+def spare_parts():
+    return render_template('yedek_parca.html')
 
 @app.route('/iletisim')
 def contact():
