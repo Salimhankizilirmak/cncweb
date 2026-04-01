@@ -17,7 +17,10 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add('visible');
         }
     });
-}, { threshold: 0.1 });
+}, { 
+    threshold: 0.05,
+    rootMargin: '0px 0px -50px 0px' // Ekrana girmeden biraz önce başlasın
+});
 
 // Mobilde menü açıkken scroll'u kilitlemek veya linke tıklayınca kapamak için
 const hamburger = document.getElementById('hamburger');

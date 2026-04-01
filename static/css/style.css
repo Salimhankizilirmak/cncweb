@@ -424,23 +424,22 @@ section {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 75%;
+        width: 85%; /* Biraz daha genişlettik */
         height: 100vh;
-        background: var(--glass-bg);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: #ffffff; /* Tam mat aydınlık mod için */
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 2rem;
+        gap: 2.5rem;
         transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        z-index: 1500;
+        z-index: 2500;
         border-left: 1px solid var(--border-color);
     }
 
-    /* Karanlık tema için mobilde camsı etki */
+    /* Karanlık tema için mobilde daha mat ve kaliteli görünüm */
     [data-theme='dark'] .nav-links {
-        background: rgba(10, 10, 10, 0.95);
+        background: #0f172a; /* Derin antrasit, opak */
     }
     
     .nav-links.active {
@@ -458,13 +457,26 @@ section {
         padding: 0 1rem;
     }
     
-    section { padding: 6rem 5% 3rem; }
+    section { 
+        padding: 6rem 5% 3rem; 
+        min-height: auto; /* Mobilde vh kısıtlamasını kaldırıyoruz ki içerik sığsın */
+    }
     
-    .page-header h1 { font-size: 2.2rem; }
+    .page-header {
+        padding-top: 8rem !important;
+    }
     
-    .features-grid { 
-        grid-template-columns: 1fr; 
+    .features-grid, .gallery-grid { 
+        display: flex !important;
+        flex-direction: column !important;
         gap: 1.5rem; 
+        overflow-y: visible !important;
+    }
+
+    /* Mobilde grid taşmalarını engellemek için kart genişliklerini ayarla */
+    .card, .gallery-item {
+        width: 100% !important;
+        max-width: 100% !important;
     }
 }
 
