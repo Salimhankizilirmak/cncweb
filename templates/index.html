@@ -22,48 +22,12 @@
 
     <div class="marquee-container fade-up" style="animation-delay: 0.2s;">
         <div class="marquee-content">
-            <!-- Yuva removed, Kaya added. Duplicated to ensure smooth infinite loop -->
-            <span class="marquee-item">Alkan Makina Değirmen</span> <span class="dot">•</span>
-            <span class="marquee-item">Miran Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Çorum Milling</span> <span class="dot">•</span>
-            <span class="marquee-item">Emta Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Clay Tech</span> <span class="dot">•</span>
-            <span class="marquee-item">Delta Dişli</span> <span class="dot">•</span>
-            <span class="marquee-item">Boyraz Grup</span> <span class="dot">•</span>
-            <span class="marquee-item">Oms Okur Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Güven Hırdavat</span> <span class="dot">•</span>
-            <span class="marquee-item">Arn Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Kaya Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Taş Değirmen</span> <span class="dot">•</span>
-            <span class="marquee-item">İno Meka</span> <span class="dot">•</span>
-            <span class="marquee-item">Erdacrane</span> <span class="dot">•</span>
-            <span class="marquee-item">Deniz Değirmen Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Murat Çelik</span> <span class="dot">•</span>
-            <span class="marquee-item">Porem Makina Porselen</span> <span class="dot">•</span>
-            <span class="marquee-item">Fido Tech</span> <span class="dot">•</span>
-            <span class="marquee-item">Hayranoğlu CNC Torna</span> <span class="dot">•</span>
-            <span class="marquee-item">Grindex Milling Machine</span> <span class="dot">•</span>
-            
-            <span class="marquee-item">Alkan Makina Değirmen</span> <span class="dot">•</span>
-            <span class="marquee-item">Miran Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Çorum Milling</span> <span class="dot">•</span>
-            <span class="marquee-item">Emta Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Clay Tech</span> <span class="dot">•</span>
-            <span class="marquee-item">Delta Dişli</span> <span class="dot">•</span>
-            <span class="marquee-item">Boyraz Grup</span> <span class="dot">•</span>
-            <span class="marquee-item">Oms Okur Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Güven Hırdavat</span> <span class="dot">•</span>
-            <span class="marquee-item">Arn Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Kaya Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Taş Değirmen</span> <span class="dot">•</span>
-            <span class="marquee-item">İno Meka</span> <span class="dot">•</span>
-            <span class="marquee-item">Erdacrane</span> <span class="dot">•</span>
-            <span class="marquee-item">Deniz Değirmen Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Murat Çelik</span> <span class="dot">•</span>
-            <span class="marquee-item">Porem Makina Porselen</span> <span class="dot">•</span>
-            <span class="marquee-item">Fido Tech</span> <span class="dot">•</span>
-            <span class="marquee-item">Hayranoğlu CNC Torna</span> <span class="dot">•</span>
-            <span class="marquee-item">Grindex Milling Machine</span> <span class="dot">•</span>
+            {% for ref in references %}
+            <span class="marquee-item">{{ ref }}</span> <span class="dot">•</span>
+            {% endfor %}
+            {% for ref in references %}
+            <span class="marquee-item">{{ ref }}</span> <span class="dot">•</span>
+            {% endfor %}
         </div>
     </div>
 </section>

@@ -6,6 +6,33 @@ app = Flask(__name__)
 # Resimlerin bulunduğu ana dizin
 IMAGES_DIR = os.path.join(app.root_path, 'images', 'ana sayfa')
 
+REFERENCES_LIST = [
+    "ALK DEĞİRMEN",
+    "MİRAN MAKİNA ARAÇ ÜSTÜ EKİPMAN YEDEK PARÇA",
+    "ÇORUM MİLLİNG MAKİNA İMALATI SAN. VE TİC. LTD. ŞTİ.",
+    "Emta Makina",
+    "CLAY TECH - YAŞAR OKUMUŞ MÜHENDİSLİK MAK. İMAL. SAN. ve TİC.LTD.ŞTİ.",
+    "Delta dişli cnc",
+    "Boyraz Grup",
+    "Oms Okur Makina",
+    "Güven Makina Hırdavat",
+    "Arn Makina",
+    "Kaya Makina",
+    "TAŞ DEGİRMEN MAKİNA",
+    "İnomeka makina",
+    "Erdacrane",
+    "Deniz Değirmen Makina",
+    "Murat Çelik",
+    "POREM PORSELEN ELEKTRİK SAN.TİC.AŞ.(644)",
+    "FİDOTECH MAKİNA",
+    "Hayranoğlu CNC Torna",
+    "Grindex Milling Machine",
+    "MTM kesici takımları oke Çorum bölge bayi",
+    "OZN Makina",
+    "Balaban makina patates yıkama makinaları",
+    "Metsan makina"
+]
+
 def get_images_from_folder(folder_name):
     folder_path = os.path.join(IMAGES_DIR, folder_name)
     images = []
@@ -25,7 +52,7 @@ def serve_images(filename):
 def home():
     # Üretimden kareler için
     uretimden_kareler = get_images_from_folder('üretimden kareler')
-    return render_template('index.html', uretimden_kareler=uretimden_kareler)
+    return render_template('index.html', uretimden_kareler=uretimden_kareler, references=REFERENCES_LIST)
 
 @app.route('/kurumsal')
 def corporate():
@@ -72,15 +99,7 @@ def contact():
 
 @app.route('/referanslar')
 def references():
-    references_list = [
-        "Alkan Makina Değirmen", "Miran Makina", "Çorum Milling", "Emta Makina", 
-        "Clay Tech", "Delta Dişli", "Boyraz Grup", "Oms Okur Makina", 
-        "Güven Hırdavat", "Arn Makina", "Kaya Makina", "Taş Değirmen", 
-        "İno Meka", "Erdacrane", "Deniz Değirmen Makina", "Murat Çelik", 
-        "Porem Makina Porselen", "Fido Tech", "Hayranoğlu CNC Torna", 
-        "Grindex Milling Machine"
-    ]
-    return render_template('referanslar.html', references=references_list)
+    return render_template('referanslar.html', references=REFERENCES_LIST)
 
 if __name__ == '__main__':
     app.run(debug=True)
