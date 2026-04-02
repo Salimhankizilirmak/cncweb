@@ -90,7 +90,7 @@ const lightboxClose = document.querySelector('.lightbox-close');
 
 if (lightbox && lightboxImg) {
     // Galerideki tüm imajlara tıklama eventi ekle
-    document.querySelectorAll('.gallery-item img, .card-image-wrapper img').forEach(img => {
+    document.querySelectorAll('.gallery-item img').forEach(img => {
         img.style.cursor = 'zoom-in';
         img.addEventListener('click', (e) => {
             e.preventDefault();
