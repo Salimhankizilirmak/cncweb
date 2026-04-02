@@ -8,13 +8,37 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo float-el" style="font-weight: 800; font-size: 1.5rem; color: var(--text-color);">BERAT MAKİNE</div>
+        <a href="/" class="logo float-el" style="text-decoration: none; display: flex; align-items: center;">
+            <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="Berat Makine Logo" 
+                 class="theme-aware-logo"
+                 style="height: 60px; mix-blend-mode: screen; transition: filter 0.5s;">
+        </a>
+        
+        <script>
+            // Logonun tema değişimine tepki vermesi için ufacık bir in-line ayar:
+            const logoEl = document.querySelector('.theme-aware-logo');
+            function updateLogoBlend() {
+                if(document.documentElement.getAttribute('data-theme') === 'light') {
+                    logoEl.style.filter = "invert(1)";
+                    logoEl.style.mixBlendMode = "multiply";
+                } else {
+                    logoEl.style.filter = "invert(0)";
+                    logoEl.style.mixBlendMode = "screen";
+                }
+            }
+            // Sayfa yüklenince:
+            document.addEventListener('DOMContentLoaded', updateLogoBlend);
+            // Tema butonu tıklamalarını dinle (mutation observer aracılığıyla):
+            const observerLogo = new MutationObserver(updateLogoBlend);
+            observerLogo.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+        </script>
         
         <ul class="nav-links">
             <li><a href="/">Anasayfa</a></li>
             <li><a href="/kurumsal">Kurumsal</a></li>
             <li><a href="/urunler">Ürünler</a></li>
             <li><a href="/yedek-parca">Yedek Parça</a></li>
+            <li><a href="/referanslar">Referanslar</a></li>
             <li><a href="/iletisim">İletişim</a></li>
         </ul>
 

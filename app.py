@@ -70,5 +70,17 @@ def spare_parts():
 def contact():
     return render_template('iletisim.html')
 
+@app.route('/referanslar')
+def references():
+    references_list = [
+        "Alkan Makina Değirmen", "Miran Makina", "Çorum Milling", "Emta Makina", 
+        "Clay Tech", "Delta Dişli", "Boyraz Grup", "Oms Okur Makina", 
+        "Güven Hırdavat", "Arn Makina", "Kaya Makina", "Taş Değirmen", 
+        "İno Meka", "Erdacrane", "Deniz Değirmen Makina", "Murat Çelik", 
+        "Porem Makina Porselen", "Fido Tech", "Hayranoğlu CNC Torna", 
+        "Grindex Milling Machine"
+    ]
+    return render_template('referanslar.html', references=references_list)
+
 if __name__ == '__main__':
     app.run(debug=True)

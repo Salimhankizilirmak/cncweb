@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-header" style="text-align: center; padding-top: 10rem; padding-bottom: 2rem;">
+    <h1 class="fade-up" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 1rem;">Güçlü Referanslarımız</h1>
+    <p class="fade-up" style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: var(--secondary-color);">
+        Sektörün öncü markalarıyla çalışarak, hassasiyet ve kaliteyi bir araya getiriyoruz. Bizimle yola çıkan tüm değerli iş ortaklarımıza teşekkür ederiz.
+    </p>
+</section>
+
+<section class="references-page" style="padding: 2rem 5% 8rem; max-width: 1400px; margin: 0 auto;">
+    <div class="features-grid fade-up" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem; margin-top: 0;">
+        {% for ref in references %}
+        <div class="card" style="padding: 2.5rem 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center; min-height: 120px; transition: all 0.3s ease;">
+            <h3 style="margin: 0; font-size: 1.25rem; font-family: 'Montserrat', sans-serif; color: var(--text-color);">
+                {{ ref }}
+            </h3>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section style="text-align: center; padding: 4rem 5%; background-color: var(--card-bg); border-top: 1px solid var(--border-color);">
+    <h2 class="fade-up" style="font-family: 'Montserrat', sans-serif; font-size: 2rem; margin-bottom: 1.5rem;">Siz De İş Ortaklarımız Arasına Katılın</h2>
+    <p class="fade-up" style="color: var(--secondary-color); margin-bottom: 2rem; max-width: 600px; margin: 0 auto 2rem;">
+        Hassas imalat ve özel üretim projeleriniz için garantili çözümler üretiyoruz.
+    </p>
+    <a href="/iletisim" class="cta-button fade-up">Şimdi İletişime Geçin</a>
+</section>
+{% endblock %}
