@@ -9,21 +9,19 @@
 <body>
     <nav class="navbar">
         <a href="/" class="logo float-el" style="text-decoration: none; display: flex; align-items: center;">
-            <img src="{{ url_for('static', filename='img/logo.jpg') }}" alt="Berat Makine Logo" 
+            <img src="{{ url_for('serve_images', filename='BERAT (1)-Photoroom.png') }}" alt="Berat Makine Logo" 
                  class="theme-aware-logo"
-                 style="height: 60px; mix-blend-mode: screen; transition: filter 0.5s;">
+                 style="height: 60px; transition: filter 0.5s;">
         </a>
         
         <script>
-            // Logonun tema değişimine tepki vermesi için ufacık bir in-line ayar:
+            // Logonun tema değişimine tepki vermesi için ayar (Şeffaf arkaplanlı PNG için sadece renk tersine çevirme)
             const logoEl = document.querySelector('.theme-aware-logo');
             function updateLogoBlend() {
                 if(document.documentElement.getAttribute('data-theme') === 'light') {
-                    logoEl.style.filter = "invert(1)";
-                    logoEl.style.mixBlendMode = "multiply";
+                    logoEl.style.filter = "invert(1)"; // Beyaz temada logoyu siyah(laştırır)
                 } else {
-                    logoEl.style.filter = "invert(0)";
-                    logoEl.style.mixBlendMode = "screen";
+                    logoEl.style.filter = "invert(0)"; // Siyah temada orjinal renginde kalır
                 }
             }
             // Sayfa yüklenince:
