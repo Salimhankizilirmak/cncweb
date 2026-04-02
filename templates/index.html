@@ -2,7 +2,7 @@
 {% block content %}
 
 <section class="hero">
-    <div class="hero-content fade-up">
+    <div class="hero-content fade-up" style="padding-bottom: 2rem;">
         <h1 class="brand-title">BERAT MAKİNE</h1>
         <div class="cut-line"></div>
         
@@ -14,75 +14,15 @@
     </div>
 </section>
 
-<section class="services" style="background-color: var(--card-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-    <div style="text-align: center; margin-bottom: 3rem;" class="fade-up">
-        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.5rem; text-transform: uppercase; letter-spacing: -1px;">Faaliyet Alanlarımız</h2>
-    </div>
-    
-    <div class="features-grid">
-        <div class="card fade-up">
-            <div class="card-image-wrapper">
-                <img src="{{ url_for('static', filename='img/1.jpeg') }}" alt="Yedek Parça Üretim" onerror="this.src='https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800'">
-            </div>
-            <h3>⚙️ Yedek Parça Üretim</h3>
-            <p>Değirmen, yol süpürme araçları ve özel endüstriyel makineler için yüksek hassasiyetli, aşınmaya dayanıklı yedek parça seri üretimi.</p>
-        </div>
-
-        <div class="card fade-up" style="animation-delay: 0.2s;">
-            <div class="card-image-wrapper">
-                <img src="{{ url_for('static', filename='img/31.jpeg') }}" alt="CNC İşleme" onerror="this.src='https://images.unsplash.com/photo-1611078512126-778841b9d4c7?auto=format&fit=crop&q=80&w=800'">
-            </div>
-            <h3>🔧 CNC İşleme</h3>
-            <p>Karmaşık geometrilere sahip parçaların, gelişmiş CNC torna ve freze tezgahlarımızla mikron hassasiyetinde işlenmesi.</p>
-        </div>
-
-        <div class="card fade-up" style="animation-delay: 0.4s;">
-            <div class="card-image-wrapper">
-                <img src="{{ url_for('static', filename='img/5.jpeg') }}" alt="Endüstriyel Çözümler" onerror="this.src='https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800'">
-            </div>
-            <h3>🏭 Endüstriyel Çözümler</h3>
-            <p>Otomotiv, savunma ve ağır sanayi sektörlerine özel kalıp tasarımı ve projeye özel butik üretim hizmetleri.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ÜRETİMDEN KARELER (GALERİ / BLOG) BÖLÜMÜ -->
-<section class="gallery" style="background-color: var(--bg-color); border-bottom: 1px solid var(--border-color);">
-    <div style="text-align: center; margin-bottom: 3rem;" class="fade-up">
-        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; text-transform: uppercase;">Üretimden Kareler</h2>
-        <p style="color: var(--secondary-color); margin-top: 0.5rem;">Tezgahlarımızdan çıkan hassas parçalar ve çalışma alanımız.</p>
-    </div>
-    
-    <div class="gallery-grid fade-up" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; padding: 0 5%; max-width: 1400px; margin: 0 auto;">
-        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
-            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/4.jpeg') }}" alt="Üretim 1" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
-        </div>
-        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
-            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/8.jpeg') }}" alt="Üretim 2" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
-        </div>
-        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
-            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/10.jpeg') }}" alt="Üretim 3" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
-        </div>
-        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
-            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/19.jpeg') }}" alt="Üretim 4" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
-        </div>
-        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
-            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/24.jpeg') }}" alt="Üretim 5" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
-        </div>
-        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
-            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/32.jpeg') }}" alt="Üretim 6" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
-        </div>
-    </div>
-</section>
-
-<section class="references" style="padding: 6rem 0; min-height: auto;">
-    <div style="text-align: center; margin-bottom: 3rem;" class="fade-up">
-        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; text-transform: uppercase;">Güçlü Referanslarımız</h2>
-        <p style="color: var(--secondary-color); margin-top: 0.5rem;">Sektörün öncüleriyle çalışmaktan gurur duyuyoruz.</p>
+<!-- GÜÇLÜ REFERANSLAR (KAYAN BANT / MARQUEE) BÖLÜMÜ -->
+<section class="references" style="padding: 2rem 0; min-height: auto; background-color: var(--bg-color); border-bottom: 1px solid var(--border-color);">
+    <div style="text-align: center; margin-bottom: 2rem;" class="fade-up">
+        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.8rem; text-transform: uppercase;">Güçlü Referanslarımız</h2>
     </div>
 
     <div class="marquee-container fade-up" style="animation-delay: 0.2s;">
         <div class="marquee-content">
+            <!-- Yuva removed, Kaya added. Duplicated to ensure smooth infinite loop -->
             <span class="marquee-item">Alkan Makina Değirmen</span> <span class="dot">•</span>
             <span class="marquee-item">Miran Makina</span> <span class="dot">•</span>
             <span class="marquee-item">Çorum Milling</span> <span class="dot">•</span>
@@ -93,7 +33,7 @@
             <span class="marquee-item">Oms Okur Makina</span> <span class="dot">•</span>
             <span class="marquee-item">Güven Hırdavat</span> <span class="dot">•</span>
             <span class="marquee-item">Arn Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Yuva Makina</span> <span class="dot">•</span>
+            <span class="marquee-item">Kaya Makina</span> <span class="dot">•</span>
             <span class="marquee-item">Taş Değirmen</span> <span class="dot">•</span>
             <span class="marquee-item">İno Meka</span> <span class="dot">•</span>
             <span class="marquee-item">Erdacrane</span> <span class="dot">•</span>
@@ -112,8 +52,69 @@
             <span class="marquee-item">Delta Dişli</span> <span class="dot">•</span>
             <span class="marquee-item">Boyraz Grup</span> <span class="dot">•</span>
             <span class="marquee-item">Oms Okur Makina</span> <span class="dot">•</span>
+            <span class="marquee-item">Güven Hırdavat</span> <span class="dot">•</span>
+            <span class="marquee-item">Arn Makina</span> <span class="dot">•</span>
+            <span class="marquee-item">Kaya Makina</span> <span class="dot">•</span>
+            <span class="marquee-item">Taş Değirmen</span> <span class="dot">•</span>
+            <span class="marquee-item">İno Meka</span> <span class="dot">•</span>
+            <span class="marquee-item">Erdacrane</span> <span class="dot">•</span>
+            <span class="marquee-item">Deniz Değirmen Makina</span> <span class="dot">•</span>
+            <span class="marquee-item">Murat Çelik</span> <span class="dot">•</span>
+            <span class="marquee-item">Porem Makina Porselen</span> <span class="dot">•</span>
+            <span class="marquee-item">Fido Tech</span> <span class="dot">•</span>
+            <span class="marquee-item">Hayranoğlu CNC Torna</span> <span class="dot">•</span>
+            <span class="marquee-item">Grindex Milling Machine</span> <span class="dot">•</span>
+        </div>
+    </div>
+</section>
+
+<section class="services" style="background-color: var(--card-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div style="text-align: center; margin-bottom: 3rem;" class="fade-up">
+        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.5rem; text-transform: uppercase; letter-spacing: -1px;">Faaliyet Alanlarımız</h2>
+    </div>
+    
+    <div class="features-grid">
+        <a href="/kategori/hidrolik-sistemler" class="card fade-up" style="text-decoration: none; color: inherit; display: block; cursor: pointer;">
+            <div class="card-image-wrapper">
+                <img src="{{ url_for('serve_images', filename='ana sayfa/kapak fotoğrafları/hidrolik-kapak.jpeg') }}" alt="Hidrolik Sistemleri">
             </div>
+            <h3>⚙️ Hidrolik Sistemleri</h3>
+        </a>
+
+        <a href="/kategori/talasli-imalat" class="card fade-up" style="animation-delay: 0.2s; text-decoration: none; color: inherit; display: block; cursor: pointer;">
+            <div class="card-image-wrapper">
+                <img src="{{ url_for('serve_images', filename='ana sayfa/kapak fotoğrafları/talasli-kapak.jpeg') }}" alt="Talaşlı İmalat">
+            </div>
+            <h3>🔧 Talaşlı İmalat</h3>
+        </a>
+
+        <a href="/kategori/ozel-uretim" class="card fade-up" style="animation-delay: 0.4s; text-decoration: none; color: inherit; display: block; cursor: pointer;">
+            <div class="card-image-wrapper">
+                <img src="{{ url_for('serve_images', filename='ana sayfa/kapak fotoğrafları/ozel-uretim-kapak.jpeg') }}" alt="Özel Üretim İmalat">
+            </div>
+            <h3>🏭 Özel Üretim İmalat</h3>
+        </a>
+    </div>
+</section>
+
+<!-- ÜRETİMDEN KARELER (GALERİ / BLOG) BÖLÜMÜ -->
+<section class="gallery" style="background-color: var(--bg-color); border-bottom: 1px solid var(--border-color);">
+    <div style="text-align: center; margin-bottom: 3rem;" class="fade-up">
+        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; text-transform: uppercase;">Üretimden Kareler</h2>
+        <p style="color: var(--secondary-color); margin-top: 0.5rem;">Tezgahlarımızdan çıkan hassas parçalar ve çalışma alanımız.</p>
+    </div>
+    
+    <div class="gallery-grid fade-up" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; padding: 0 5%; max-width: 1400px; margin: 0 auto;">
+        {% for img in uretimden_kareler %}
+        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
+            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('serve_images', filename=img) }}" alt="Üretim Karesi" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
+        </div>
+        {% endfor %}
+        {% if not uretimden_kareler %}
+            <p style="text-align: center; color: var(--secondary-color); grid-column: 1 / -1;">Henüz üretimden kare yüklenmedi.</p>
+        {% endif %}
     </div>
 </section>
 
 {% endblock %}
+

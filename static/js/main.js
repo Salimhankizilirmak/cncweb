@@ -82,3 +82,45 @@ if (filterBtns.length > 0 && galleryItems.length > 0) {
         });
     });
 }
+
+// --- LIGHTBOX İŞLEVLERİ ---
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.querySelector('.lightbox-close');
+
+if (lightbox && lightboxImg) {
+    // Galerideki tüm imajlara tıklama eventi ekle
+    document.querySelectorAll('.gallery-item img, .card-image-wrapper img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', (e) => {
+            e.preventDefault();
+            lightboxImg.src = img.src;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Arkaplan scroll'u kilitle
+        });
+    });
+
+    // Kapatma butonu
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+    // Dış alana tıklayınca kapatma
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+
+    // ESC tuşu ile kapatma
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}

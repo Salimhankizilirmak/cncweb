@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="page-header" style="text-align: center; position: relative;">
+<section class="page-header" style="text-align: center; position: relative; padding-top: 10rem;">
     <div class="glow-bg"></div>
-    <h1 class="fade-up float-el" style="position: relative; z-index: 2;">Berat Makine Kimdir?</h1>
-    <p class="fade-up" style="max-width: 800px; margin: 2rem auto; font-size: 1.1rem; line-height: 1.8; position: relative; z-index: 2;">
+    <h1 class="fade-up float-el" style="position: relative; z-index: 2; font-family: 'Montserrat', sans-serif; font-size: 3.5rem; text-transform: uppercase;">Berat Makine</h1>
+    <p class="fade-up" style="max-width: 800px; margin: 2rem auto; font-size: 1.1rem; line-height: 1.8; position: relative; z-index: 2; color: var(--secondary-color);">
         CNC işçiliğinde yılların getirdiği tecrübe, yüksek hassasiyet ve sarsılmaz güven ile sektöre yön veriyoruz.
     </p>
 </section>
@@ -11,88 +11,73 @@
 <section class="mission-vision" style="max-width: 1100px; margin: 0 auto; padding-bottom: 5rem;">
     <div class="features-grid">
         <div class="card fade-up float-el" style="animation-delay: 0s;">
-            <h3 style="color: var(--primary-color); font-size: 1.8rem; margin-bottom: 1rem;">🎯 Misyonumuz</h3>
-            <p style="opacity: 0.9; line-height: 1.8; font-size: 1.05rem;">
-                Berat Makine olarak CNC işçiliğinde kalite, güven ve zamanında teslimatı temel ilke ediniyoruz. Müşterilerimizin ihtiyaçlarını en doğru şekilde analiz ederek, yüksek hassasiyetle üretilmiş, dayanıklı ve güvenilir ürünler sunmayı hedefliyoruz. Sürekli gelişen teknolojiyi yakından takip ederek üretim süreçlerimizi iyileştiriyor, verdiğimiz her termin sözünü eksiksiz yerine getirerek müşteri memnuniyetini en üst seviyede tutuyoruz.
-            </p>
-        </div>
-        
-        <div class="card fade-up float-el" style="animation-delay: 0.2s;">
             <h3 style="color: var(--primary-color); font-size: 1.8rem; margin-bottom: 1rem;">👁️ Vizyonumuz</h3>
             <p style="opacity: 0.9; line-height: 1.8; font-size: 1.05rem;">
                 CNC işleme sektöründe kalite ve güven denildiğinde akla gelen öncü firmalardan biri olmak. Yenilikçi üretim anlayışımız, güçlü iş ortaklıklarımız ve sürdürülebilir büyüme hedefimizle hem yurt içinde hem de uluslararası alanda tercih edilen bir marka haline gelmek. Teknolojiye yatırım yaparak ve kendimizi sürekli geliştirerek sektörün geleceğine yön veren bir firma olmak.
             </p>
         </div>
+
+        <div class="card fade-up float-el" style="animation-delay: 0.2s;">
+            <h3 style="color: var(--primary-color); font-size: 1.8rem; margin-bottom: 1rem;">🎯 Misyonumuz</h3>
+            <p style="opacity: 0.9; line-height: 1.8; font-size: 1.05rem;">
+                Berat Makine olarak CNC işçiliğinde kalite, güven ve zamanında teslimatı temel ilke ediniyoruz. Müşterilerimizin ihtiyaçlarını en doğru şekilde analiz ederek, yüksek hassasiyetle üretilmiş, dayanıklı ve güvenilir ürünler sunmayı hedefliyoruz. Sürekli gelişen teknolojiyi yakından takip ederek üretim süreçlerimizi iyileştiriyor, verdiğimiz her termin sözünü eksiksiz yerine getirerek müşteri memnuniyetini en üst seviyede tutuyoruz.
+            </p>
+        </div>
     </div>
 </section>
 
-<!-- ÜRETİMDEN KARELER (GALERİ / BLOG) BÖLÜMÜ -->
-<section class="gallery" style="background-color: var(--card-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+<!-- ÜRETİMDEN KARELER BÖLÜMÜ -->
+<section class="gallery" style="background-color: var(--card-bg); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 5rem 0;">
     <div style="text-align: center; margin-bottom: 3rem;" class="fade-up">
         <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; text-transform: uppercase;">Üretimden Kareler</h2>
         <p style="color: var(--secondary-color); margin-top: 0.5rem;">Tezgahlarımızdan çıkan hassas parçalar ve çalışma alanımız.</p>
     </div>
     
     <div class="gallery-grid fade-up" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; padding: 0 5%; max-width: 1400px; margin: 0 auto;">
+        {% for img in uretimden_kareler %}
         <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
-            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/4.jpeg') }}" alt="Üretim 1" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
+            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('serve_images', filename=img) }}" alt="Üretim" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
         </div>
-        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
-            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/8.jpeg') }}" alt="Üretim 2" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
-        </div>
-        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
-            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/10.jpeg') }}" alt="Üretim 3" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
-        </div>
-        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
-            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/19.jpeg') }}" alt="Üretim 4" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
-        </div>
-        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
-            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/32.jpeg') }}" alt="Üretim 5" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
-        </div>
-        <div class="gallery-item hover-effect" style="border-radius: 4px; overflow: hidden; height: 250px; position: relative;">
-            <img style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(20%);" src="{{ url_for('static', filename='img/1.jpeg') }}" alt="Üretim 6" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='grayscale(0%)';" onmouseout="this.style.transform='scale(1.0)'; this.style.filter='grayscale(20%)';">
-        </div>
+        {% endfor %}
+        {% if not uretimden_kareler %}
+            <p style="text-align: center; color: var(--secondary-color); grid-column: 1 / -1;">Henüz üretimden kare yüklenmedi.</p>
+        {% endif %}
     </div>
 </section>
 
-<!-- GÜÇLÜ REFERANSLAR (KAYAN BANT / MARQUEE) BÖLÜMÜ -->
-<section class="references" style="padding: 6rem 0; min-height: auto;">
-    <div style="text-align: center; margin-bottom: 3rem;" class="fade-up">
-        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; text-transform: uppercase;">Güçlü Referanslarımız</h2>
-        <p style="color: var(--secondary-color); margin-top: 0.5rem;">Sektörün öncüleriyle çalışmaktan gurur duyuyoruz.</p>
-    </div>
-
-    <div class="marquee-container fade-up" style="animation-delay: 0.2s;">
-        <div class="marquee-content">
-            <span class="marquee-item">Alkan Makina Değirmen</span> <span class="dot">•</span>
-            <span class="marquee-item">Miran Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Çorum Milling</span> <span class="dot">•</span>
-            <span class="marquee-item">Emta Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Clay Tech</span> <span class="dot">•</span>
-            <span class="marquee-item">Delta Dişli</span> <span class="dot">•</span>
-            <span class="marquee-item">Boyraz Grup</span> <span class="dot">•</span>
-            <span class="marquee-item">Oms Okur Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Güven Hırdavat</span> <span class="dot">•</span>
-            <span class="marquee-item">Arn Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Yuva Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Taş Değirmen</span> <span class="dot">•</span>
-            <span class="marquee-item">İno Meka</span> <span class="dot">•</span>
-            <span class="marquee-item">Erdacrane</span> <span class="dot">•</span>
-            <span class="marquee-item">Deniz Değirmen Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Murat Çelik</span> <span class="dot">•</span>
-            <span class="marquee-item">Porem Makina Porselen</span> <span class="dot">•</span>
-            <span class="marquee-item">Fido Tech</span> <span class="dot">•</span>
-            <span class="marquee-item">Hayranoğlu CNC Torna</span> <span class="dot">•</span>
-            <span class="marquee-item">Grindex Milling Machine</span> <span class="dot">•</span>
-            
-            <span class="marquee-item">Alkan Makina Değirmen</span> <span class="dot">•</span>
-            <span class="marquee-item">Miran Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Çorum Milling</span> <span class="dot">•</span>
-            <span class="marquee-item">Emta Makina</span> <span class="dot">•</span>
-            <span class="marquee-item">Clay Tech</span> <span class="dot">•</span>
-            <span class="marquee-item">Delta Dişli</span> <span class="dot">•</span>
-            <span class="marquee-item">Boyraz Grup</span> <span class="dot">•</span>
-            <span class="marquee-item">Oms Okur Makina</span> <span class="dot">•</span>
+<!-- INSTAGRAM SOSYAL MEDYA BÖLÜMÜ -->
+<section class="social-media-feed" style="padding: 6rem 0; min-height: auto; text-align: center;">
+    <div class="fade-up">
+        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; text-transform: uppercase; display: flex; justify-content: center; align-items: center; gap: 1rem;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 32px; height: 32px;">
+            Sosyal Medya
+        </h2>
+        <p style="color: var(--secondary-color); margin-top: 0.5rem; margin-bottom: 3rem;">Bizi @berat_makina12 hesabı üzerinden takip edin.</p>
+        
+        <div class="instagram-mock-feed" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 900px; margin: 0 auto 2rem auto;">
+            <a href="https://www.instagram.com/berat_makina12?igsh=czk5cHc0aGZ0cHFt" target="_blank" style="display: block; position: relative; border-radius: 8px; overflow: hidden; height: 300px;">
+                <img src="{{ url_for('serve_images', filename='ana sayfa/kapak fotoğrafları/ozel-uretim-kapak.jpeg') }}" style="width: 100%; height: 100%; object-fit: cover;" alt="Instagram">
+                <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.3); display:flex; align-items:center; justify-content:center; opacity:0; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" style="width: 40px;">
+                </div>
+            </a>
+            <a href="https://www.instagram.com/berat_makina12?igsh=czk5cHc0aGZ0cHFt" target="_blank" style="display: block; position: relative; border-radius: 8px; overflow: hidden; height: 300px;">
+                <img src="{{ url_for('serve_images', filename='ana sayfa/kapak fotoğrafları/hidrolik-kapak.jpeg') }}" style="width: 100%; height: 100%; object-fit: cover;" alt="Instagram">
+                <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.3); display:flex; align-items:center; justify-content:center; opacity:0; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" style="width: 40px;">
+                </div>
+            </a>
+            <a href="https://www.instagram.com/berat_makina12?igsh=czk5cHc0aGZ0cHFt" target="_blank" style="display: block; position: relative; border-radius: 8px; overflow: hidden; height: 300px;">
+                <img src="{{ url_for('serve_images', filename='ana sayfa/kapak fotoğrafları/talasli-kapak.jpeg') }}" style="width: 100%; height: 100%; object-fit: cover;" alt="Instagram">
+                <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.3); display:flex; align-items:center; justify-content:center; opacity:0; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" style="width: 40px;">
+                </div>
+            </a>
+        </div>
+            <div style="margin-top: 2rem;">
+                <a href="https://www.instagram.com/berat_makina12?igsh=czk5cHc0aGZ0cHFt" target="_blank" class="cta-button" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; border: none; padding: 1rem 2rem; font-weight: bold; border-radius: 30px; display: inline-block;">
+                    Instagram Profilimize Git
+                </a>
             </div>
     </div>
 </section>

@@ -2,9 +2,11 @@
 {% block content %}
 
 <section class="page-header" style="text-align: center; padding-top: 10rem; padding-bottom: 2rem; min-height: auto;">
-    <h1 class="fade-up" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 1rem;">Ürün Galerimiz</h1>
+    <h1 class="fade-up" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 1rem;">
+        {{ category_title }} Galerisi
+    </h1>
     <p class="fade-up" style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: var(--secondary-color);">
-        Talaşlı imalat, torna ve freze alanında mikron hassasiyetinde ürettiğimiz üretim şaheserlerimiz.
+        {{ category_title }} alanında mikron hassasiyetinde ürettiğimiz şaheserlerimiz.
     </p>
 </section>
 
@@ -33,4 +35,3 @@
 </section>
 
 {% endblock %}
-

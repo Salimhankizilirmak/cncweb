@@ -2,66 +2,34 @@
 {% block content %}
 
 <section class="page-header" style="text-align: center; padding-top: 10rem; padding-bottom: 2rem; min-height: auto;">
-    <h1 class="fade-up" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 1rem;">Yedek Parça Üretimi</h1>
+    <h1 class="fade-up" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 1rem;">Yedek Parça Galerisi</h1>
     <p class="fade-up" style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: var(--secondary-color);">
-        Değirmen, yol süpürme araçları ve özel endüstriyel makineler için yüksek hassasiyetli, dayanıklı ve uzun ömürlü yedek parça seri üretimini usta ellerden alarak kaliteden ödün vermiyoruz.
+        Değirmen, yol süpürme araçları ve özel endüstriyel makineler için ürettiğimiz yedek parça seçeneklerimiz.
     </p>
 </section>
 
-<section class="spare-parts-gallery" style="padding-top: 2rem; min-height: auto;">
-    <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto;">
+<section class="products-grid-section" style="padding-bottom: 8rem;">
+    <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; padding: 0 5%; max-width: 1400px; margin: 0 auto;">
+        {% for img in images %}
+        <div class="gallery-item fade-up card" style="padding: 0.8rem; border-radius: 6px; position: relative; overflow: hidden;">
+            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 0;">
+                <img src="{{ url_for('serve_images', filename=img) }}" alt="Yedek Parça {{ loop.index }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px; transition: transform 0.3s; cursor: pointer;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </div>
+        </div>
+        {% endfor %}
         
-        <div class="gallery-item fade-up card" style="padding: 1rem; border-radius: 8px;">
-            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 0;">
-                <img src="{{ url_for('static', filename='img/16.jpeg') }}" alt="Özel Üretim Dişliler">
-            </div>
-            <h3 style="margin-top: 1.5rem; font-size: 1.2rem; text-align: center;">Özel Üretim Dişliler</h3>
-        </div>
-
-        <div class="gallery-item fade-up card" style="padding: 1rem; border-radius: 8px; animation-delay: 0.1s;">
-            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 0;">
-                <img src="{{ url_for('static', filename='img/19.jpeg') }}" alt="Hassas Mil İşleme">
-            </div>
-            <h3 style="margin-top: 1.5rem; font-size: 1.2rem; text-align: center;">Hassas Mil İşleme</h3>
-        </div>
-
-        <div class="gallery-item fade-up card" style="padding: 1rem; border-radius: 8px; animation-delay: 0.2s;">
-            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 0;">
-                <img src="{{ url_for('static', filename='img/17.jpeg') }}" alt="Endüstriyel Aktarma Organları">
-            </div>
-            <h3 style="margin-top: 1.5rem; font-size: 1.2rem; text-align: center;">Endüstriyel Aktarma Organları</h3>
-        </div>
-
-        <div class="gallery-item fade-up card" style="padding: 1rem; border-radius: 8px; animation-delay: 0.3s;">
-            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 0;">
-                <img src="{{ url_for('static', filename='img/24.jpeg') }}" alt="Özel Somun ve Civatalar">
-            </div>
-            <h3 style="margin-top: 1.5rem; font-size: 1.2rem; text-align: center;">Özel Somun ve Cıvatalar</h3>
-        </div>
-
-        <div class="gallery-item fade-up card" style="padding: 1rem; border-radius: 8px; animation-delay: 0.4s;">
-            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 0;">
-                <img src="{{ url_for('static', filename='img/15.jpeg') }}" alt="Konik Dişli Sistemleri">
-            </div>
-            <h3 style="margin-top: 1.5rem; font-size: 1.2rem; text-align: center;">Konik Dişli Sistemleri</h3>
-        </div>
-
-        <div class="gallery-item fade-up card" style="padding: 1rem; border-radius: 8px; animation-delay: 0.5s;">
-            <div class="card-image-wrapper" style="height: 250px; margin-bottom: 0;">
-                <img src="{{ url_for('static', filename='img/32.jpeg') }}" alt="Rulman ve Yataklama Bileşenleri">
-            </div>
-            <h3 style="margin-top: 1.5rem; font-size: 1.2rem; text-align: center;">Rulman ve Yataklama Bileşenleri</h3>
-        </div>
-
+        {% if not images %}
+        <p style="grid-column: 1 / -1; text-align: center; color: var(--secondary-color);">Henüz fotoğraf yüklenmedi.</p>
+        {% endif %}
     </div>
 </section>
 
-<section style="text-align: center; padding: 4rem 5%; min-height: auto; background-color: var(--card-bg); margin-top: 4rem; border-top: 1px solid var(--border-color);">
-    <h2 class="fade-up" style="font-family: 'Montserrat', sans-serif; font-size: 2rem; margin-bottom: 1.5rem;">Sizin İçin Özel Bir Parçaya mı İhtiyacınız Var?</h2>
-    <p class="fade-up" style="color: var(--secondary-color); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-        Teknik çiziminiz veya numuneniz üzerinden, istediğiniz adetlerde seri üretim yapabiliriz. İhtiyacınızı bize iletin, en kısa sürede fiyatlandıralım.
+<section style="text-align: center; padding: 4rem 5%; background-color: var(--card-bg); border-top: 1px solid var(--border-color);">
+    <h2 class="fade-up" style="font-family: 'Montserrat', sans-serif; font-size: 2rem; margin-bottom: 1.5rem;">Aklınızdaki Parçayı Beraber Üretelim</h2>
+    <p class="fade-up" style="color: var(--secondary-color); margin-bottom: 2rem; max-width: 600px; margin: 0 auto 2rem;">
+        Yukarıdaki referans ürünlerimizde olduğu gibi, sizin için de hassasiyetin sanata dönüştüğü parçalar üretebiliriz. Teknik çiziminiz veya parça numunenizle hemen bize ulaşın.
     </p>
-    <a href="/iletisim" class="cta-button fade-up">Detaylı Bilgi & Fiyat Alın</a>
+    <a href="/iletisim" class="cta-button fade-up">Ücretsiz Fiyatlandırma Talebi İletin</a>
 </section>
 
 {% endblock %}

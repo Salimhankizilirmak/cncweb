@@ -1,9 +1,82 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="page-header" style="text-align: center;">
-    <h1 class="fade-up float-el">İletişim</h1>
-    <p class="fade-up" style="max-width: 800px; margin: 2rem auto; font-size: 1.1rem; line-height: 1.8;">
-        Bizimle iletişime geçmek için... (İçerikler buraya gelecek)
+<section class="page-header" style="text-align: center; padding-top: 10rem; padding-bottom: 2rem;">
+    <h1 class="fade-up" style="font-family: 'Montserrat', sans-serif; font-size: 3.5rem; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 1rem;">İletişim</h1>
+    <p class="fade-up" style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: var(--secondary-color);">
+        Projeleriniz ve fiyatlandırma talepleriniz için bize ulaşın.
     </p>
+</section>
+
+<!-- Yeni Eklenen Sosyal Ağlar ve WhatsApp Bölümü -->
+<section class="social-integration fade-up" style="max-width: 1200px; margin: 0 auto 5rem auto; padding: 0 5%;">
+    <div style="text-align: center; margin-bottom: 3rem;">
+        <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; text-transform: uppercase;">Dijital Ağlarımız</h2>
+        <p style="color: var(--secondary-color); margin-top: 0.5rem;">Bizi sosyal medyadan takip edin veya WhatsApp üzerinden anında ulaşın.</p>
+    </div>
+
+    <!-- WhatsApp Büyük CTA -->
+    <div class="whatsapp-cta card" style="text-align: center; padding: 3rem 2rem; margin-bottom: 4rem; background: linear-gradient(135deg, rgba(37,211,102,0.05) 0%, rgba(18,140,126,0.1) 100%); border: 1px solid rgba(37,211,102,0.2);">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width: 70px; margin-bottom: 1.5rem; filter: drop-shadow(0 5px 15px rgba(37,211,102,0.4));">
+        <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #20b054;">Üretim Hattımızla Şimdi Konuşun</h3>
+        <p style="margin-bottom: 2rem; color: var(--secondary-color); font-size: 1.1rem; max-width: 600px; margin-left: auto; margin-right: auto;">Proje teknik detayları, fiyatlandırma ve siparişlerinizi yönetmek için WhatsApp üzerinden bizimle iletişime geçin.</p>
+        <a href="https://wa.me/905377777363" target="_blank" class="cta-button" style="background-color: #25D366; color: white !important; border: none; padding: 1rem 2.5rem; border-radius: 30px; font-size: 1.1rem; display: inline-block; box-shadow: 0 10px 20px rgba(37,211,102,0.3);">WhatsApp İle İletişime Geç</a>
+    </div>
+
+    <!-- Instagram Mock Feed -->
+    <div class="instagram-mock-feed" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem;">
+        <a href="https://www.instagram.com/berat_makina12?igsh=czk5cHc0aGZ0cHFt" target="_blank" style="display: block; position: relative; border-radius: 8px; overflow: hidden; height: 280px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <img src="{{ url_for('serve_images', filename='ana sayfa/kapak fotoğrafları/ozel-uretim-kapak.jpeg') }}" style="width: 100%; height: 100%; object-fit: cover;" alt="Instagram">
+            <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; opacity:0; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" style="width: 50px; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));">
+            </div>
+        </a>
+        <a href="https://www.instagram.com/berat_makina12?igsh=czk5cHc0aGZ0cHFt" target="_blank" style="display: block; position: relative; border-radius: 8px; overflow: hidden; height: 280px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <img src="{{ url_for('serve_images', filename='ana sayfa/kapak fotoğrafları/hidrolik-kapak.jpeg') }}" style="width: 100%; height: 100%; object-fit: cover;" alt="Instagram">
+            <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; opacity:0; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" style="width: 50px; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));">
+            </div>
+        </a>
+        <a href="https://www.instagram.com/berat_makina12?igsh=czk5cHc0aGZ0cHFt" target="_blank" style="display: block; position: relative; border-radius: 8px; overflow: hidden; height: 280px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <img src="{{ url_for('serve_images', filename='ana sayfa/kapak fotoğrafları/talasli-kapak.jpeg') }}" style="width: 100%; height: 100%; object-fit: cover;" alt="Instagram">
+            <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; opacity:0; transition: opacity 0.3s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" style="width: 50px; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.5));">
+            </div>
+        </a>
+    </div>
+    
+    <div style="text-align: center;">
+        <a href="https://www.instagram.com/berat_makina12?igsh=czk5cHc0aGZ0cHFt" target="_blank" class="cta-button" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white !important; border: none; padding: 1rem 2.5rem; font-weight: bold; border-radius: 30px; display: inline-block; box-shadow: 0 10px 20px rgba(220, 39, 67, 0.3);">
+            Instagram Profilimize Git
+        </a>
+    </div>
+</section>
+
+<section class="contact-section fade-up" style="max-width: 1200px; margin: 0 auto 5rem auto; padding: 0 5%; display: flex; flex-wrap: wrap; gap: 3rem;">
+    <div class="contact-info card" style="flex: 1; min-width: 300px; text-align: left; padding: 2rem;">
+        <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary-color);">İletişim Bilgileri</h2>
+        
+        <div style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">📱 WhatsApp ve GSM Hattı:</h3>
+            <p><strong>Kadir Bey:</strong> <a href="https://wa.me/905377777363" target="_blank" style="color: var(--text-color); text-decoration: none; font-weight: bold;">+90 537 777 73 63</a></p>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">📸 Sosyal Medya</h3>
+            <p>
+                <a href="https://www.instagram.com/berat_makina12?igsh=czk5cHc0aGZ0cHFt" target="_blank" style="color: var(--text-color); text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 24px; height: 24px;">
+                    @berat_makina12
+                </a>
+            </p>
+        </div>
+
+        <div>
+            <p>Proje bazlı veya seri üretim CNC torna ve freze işleriniz için ilgili hattımızdan veya ofisimizi ziyaret ederek teknik destek ve teklif alabilirsiniz.</p>
+        </div>
+    </div>
+    
+    <div class="contact-map card" style="flex: 2; min-width: 300px; padding: 1rem;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3033.1124347923183!2d34.919918076016074!3d40.51700587142368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDMxJzAxLjIiTiAzNMKwNTUnMjEuMCJF!5e0!3m2!1str!2str!4v1775137060330!5m2!1str!2str" width="100%" height="450" style="border:0; border-radius: 4px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 </section>
 {% endblock %}
