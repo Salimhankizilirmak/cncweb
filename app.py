@@ -38,7 +38,8 @@ def get_images_from_folder(folder_name):
     images = []
     if os.path.exists(folder_path):
         for f in os.listdir(folder_path):
-            if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp')):
+            file_path = os.path.join(folder_path, f)
+            if f.lower().endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp')) and os.path.isfile(file_path) and os.path.getsize(file_path) > 0:
                 # URL path oluştur
                 images.append(f'ana sayfa/{folder_name}/{f}')
     return images
